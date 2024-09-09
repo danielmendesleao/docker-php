@@ -36,6 +36,7 @@ foreach($arquivos as $img){
    //Header da planilha
 if($arrayJson['type'] == 'ticket'){
     $fieldSpreadsheet['type'] = $arrayJson['type'];
+    $fieldSpreadsheet['id'] = $arrayJson['id'];
     $fieldSpreadsheet['name'] = $arrayJson['requester']['name'];
     $fieldSpreadsheet['email'] = $arrayJson['requester']['email'];
     $fieldSpreadsheet['city'] = '--';
@@ -43,9 +44,12 @@ if($arrayJson['type'] == 'ticket'){
     $fieldSpreadsheet['messageCount'] = '--';
     $fieldSpreadsheet['chatDuration'] = '--';
     $fieldSpreadsheet['createdOn'] = $arrayJson['createdOn'];
+    $fieldSpreadsheet['rating'] = $arrayJson['rating'];
+    $fieldSpreadsheet['messages'] = $arrayJson['messages'];
 
 }else{
     $fieldSpreadsheet['type'] = $arrayJson['type'];
+    $fieldSpreadsheet['id'] = $arrayJson['id'];
     $fieldSpreadsheet['name'] = $arrayJson['visitor']['name'];
     $fieldSpreadsheet['email'] = $arrayJson['visitor']['email'];
     $fieldSpreadsheet['city'] = $arrayJson['location']['city'];
@@ -53,6 +57,10 @@ if($arrayJson['type'] == 'ticket'){
     $fieldSpreadsheet['messageCount'] = $arrayJson['messageCount'];
     $fieldSpreadsheet['chatDuration'] = $arrayJson['chatDuration'];
     $fieldSpreadsheet['createdOn'] = $arrayJson['createdOn'];
+    $fieldSpreadsheet['rating'] = $arrayJson['rating'];
+    $fieldSpreadsheet['messages'] = $arrayJson['messages'];
+
+    
 }
 // dump($fieldSpreadsheet);
 //    fputcsv($f, $header, "\t");
